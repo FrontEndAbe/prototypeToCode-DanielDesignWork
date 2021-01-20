@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Saira+Extra+Condensed&display=swap');
+
+/* All variables */
+:root {
+  --mainBlue            : #2E6AE4;
+  --helperBlue          : #80CAD9;
+  --mainBrown           : #BF7652;
+  --helperBrown         : #FAB295;
+  --mainGreen           : #48D0A1;
+  --helperPurple        : #4B52D3;
+  --white               : #FFF;
+  --black               : #000;
+  --hanson              : "Hanson";
+  --rubik               : "Rubik";
+  --sariaExtraCondensed : "Saira Extra Condensed";
+}
+
+body,
+html {
+  width      : 100%;
+  height     : 100%;
+  margin     : 0;
+  background : var(--mainBlue); /* Mainly here to see how it will look */
+}
+
+p, a, h1 {
+  margin: 0;
+}
+
+/* My default classes */
+.displayFlex { display : flex; }
+.flexCol { flex-direction : column; }
+.alignCenter { align-items : center; }
+.alignFlexStart { align-items : flex-start; }
+.justifyCenter { justify-content : center; }
+.justifyBetween { justify-content : space-between; }
+.justifyEvenly { justify-content : space-evenly; }
+
+#root {
+  width    : calc(100vw - (100vw * 0.04 * 2)); /* Changed */
+  height   : calc(100vh - (100vw * 0.04)); /* Changed */
+  padding  : calc(100vw * 0.04) calc(100vw * 0.04) 0; /* Give 4% padding top | left | right */
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  width : 100%;
+  height: 5%; /* Changed */
+}
+
+.nav .logo {
+  text-transform : uppercase;
+  font-size      : 3vw;
+  font-family    : var(--sariaExtraCondensed);
+}
+
+.nav .navItem {
+  margin      : 0 20px; /* So each item has 40px of space in between */
+  font-family : var(--rubik);
+}
+
+.nav .navItem {
+  position  : relative; /* Important for the underline */
+  font-size : 1.25vw;
+}
+
+/* This is for the underline */
+.nav .navItem::before {
+  width      : 0%; /* Start with a width of 0 */
+  height     : 2px;
+  bottom     : -5px; /* I want it to be 5 more px lower */
+  left       : 0;
+  content    : "";
+  position   : absolute; /* So we can control the position */
+  background : #fff;
+  transition : 0.3s all ease-in-out;
+}
+
+/* Fully extends the underline if navItem is also active */
+.nav .navItem.active::before {
+  width : 100%;
+}
+
+/* Fully extends the underline if navItem is hovered */
+.nav .navItem:hover::before {
+  width      : 100%;
+  transition : 0.3s all ease-in-out;
+}
+
+.nav .logo,
+.nav .navItem {
+  line-height     : 1;
+  text-decoration : none;
+  color           : var(--white);
+}
+
+/* ---------------------------------------------------------- */
+
+.contentSection {
+  width       : 100%;
+  height      : 95%; /* The nav is 5% */
+  font-family : var(--rubik);
+  color       : var(--white);
+}
+
+.contentSection .backgroundText {
+  margin      : 5% auto 0;
+  left        : 0;
+  right       : 0;
+  font-size   : 17vw;
+  text-align  : center;
+  position    : absolute; /* Allows for control */
+  font-family : var(--hanson);
+  color       : var(--helperBlue);
+}
+
+.contentSection .topPortion {
+  position        : relative;
+  display         : flex;
+  justify-content : space-between;
+}
+
+.contentSection .topPortion .left {
+  padding-left : 3%;
+}
+
+.contentSection .topPortion .left .slideNumber {
+  margin-top : 25%;
+  font-size  : 7vw;
+}
+
+.contentSection .topPortion .left .whiteDash {
+  width            : 20%;
+  height           : 5px;
+  margin           : 35% 0;
+  background-color : var(--white);
+}
+
+.contentSection .topPortion .left .description,
+.contentSection .topPortion .right .dropDownContainer .dropDown .dropDownButton {
+  font-size : 1.4vw;
+}
+
+.contentSection .topPortion .right {
+  width : 25%;
+}
+
+.contentSection .topPortion .right .dropDownContainer {
+  margin-top : 90%;
+}
+
+.contentSection .topPortion .right .dropDownContainer .dropDown {
+  cursor        : pointer;
+  border-bottom : 5px solid var(--white);
+}
+
+.contentSection .topPortion .right .dropDownContainer .dropDown:last-child {
+  border : none;
+}
+
+.contentSection .topPortion .right .dropDownContainer .dropDown .dropDownButton {
+  margin : 15px 0;
+}
+
+.contentSection .topPortion .right .dropDownContainer .dropDown .dropDownText {
+  max-height : 0; /* All the texts are disabled at the start */
+  overflow   : hidden;
+  transition : max-height 0.2s ease-out; /* Animates the expansion */
+}
+
+.contentSection .topPortion .right .dropDownContainer .dropDown .dropDownText p {
+  border-top-left-radius  : 10px;
+  border-top-right-radius : 10px;
+  background              : white;
+  padding                 : 5%;
+  color                   : var(--mainBlue);
+}
+
+/* ------------------------------------------- */
+
+/* Container for all images */
+.imagesHolder {
+  position : relative;
+}
+
+/* Container for the bottle and label */
+.imagesHolder .bottleHolder {
+  margin-top : 20%;
+  z-index    : 2;
+  position   : relative;
+  overflow   : hidden;
+}
+
+/* Affects just the bottle */
+.imagesHolder .bottleHolder .bottleImage {
+  width : 15vw;
+}
+
+/* Affects the whole label */
+.imagesHolder .bottleHolder .label {
+  margin-top : 75%;
+  left       : -14%;
+  right      : -14%;
+  position   : absolute;
+}
+
+/* Affects the logo */
+.imagesHolder .bottleHolder .label .labelLogo {
+  width        : 55%;
+  margin-right : 10%;
+}
+
+/* Affects the nutrition facts */
+.imagesHolder .bottleHolder .label .labelFacts {
+  width       : 30%;
+  margin-left : 10%;
+}
+
+/* These are the extra images */
+.imagesHolder .helperImage {
+  position : absolute;
+}
+
+.imagesHolder .helperImage.cherry {
+  top     : 0;
+  left    : 120%;
+  z-index : 3;
+}
+
+.imagesHolder .helperImage.cherryNoStem {
+  top       : 25%;
+  left      : -20%;
+  transform : rotate(237deg);
+}
+
+.imagesHolder .helperImage.orangeSlice {
+  width   : 100%;
+  z-index : 3;
+  bottom  : -15%;
+  right   : -40%;
+}
