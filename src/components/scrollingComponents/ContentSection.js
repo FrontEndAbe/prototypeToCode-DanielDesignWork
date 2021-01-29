@@ -1,12 +1,11 @@
-import React                          from 'react';
-import DropDown                       from './DropDown';
-import Image                          from './Image';
-import { ReactComponent as PlusIcon } from '../../images/plusIcon.svg';
+import React    from 'react';
+import DropDown from './DropDown';
+import Image    from './Image';
 
 function ContentSection(props) {
   return (
-    <div className="contentSection">
-      <h1 className="backgroundText">{ props.data.backgroundText }</h1>
+    <div className={ `contentSection ${ props.data.backgroundText.toLowerCase() }` }>
+      <h1 id={ `${ props.data.backgroundText.toLowerCase() }` }>{ props.data.backgroundText }</h1>
       <div className="topPortion">
         <div className="left">
           <p className="slideNumber">{ props.data.slideNumber }</p>
@@ -17,6 +16,7 @@ function ContentSection(props) {
         </div>
         <div className="middle displayFlex flexCol justifyBetween">
           <Image
+            bottleId            = { `${ props.data.backgroundText.toLowerCase() }Bottle` }
             bottleImage         = { props.data.bottleImage }
             nutritionFactsImage = { props.data.nutritionFactsImage }
             logoImage           = { props.data.logoImage }
@@ -29,10 +29,13 @@ function ContentSection(props) {
           </div>
         </div>
       </div>
-      <div className="bottomPortion">
-        {
-          // Bottom content will go here
-        }
+      <div className="bottomPortion displayFlex justifyCenter">
+        <div className="paperLookinAss displayFlex justifyBetween alignCenter">
+          <p className="bottomText">{ props.data.paperAssets.text }</p>
+          <div className="assets">
+            { props.data.paperAssets.imgs.map((img, index) => <img src={ img } key={ `paperImage${index}` } />) }
+          </div>
+        </div>
       </div>
     </div>
   );

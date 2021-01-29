@@ -5,14 +5,15 @@ function Image(props) {
     <div className="imagesHolder">
       <div className="bottleHolder displayFlex">
         <img className="bottleImage" src={ props.bottleImage } />
-        <div className="label displayFlex alignFlexStart">
+        <div id={props.bottleId} className="label displayFlex alignFlexStart">
           <img className="labelLogo" src={ props.logoImage } />
           <img className="labelFacts" src={ props.nutritionFactsImage } />
         </div>
       </div>
       { props.additionalImages.map((img, index) => (
         <img
-          className = { `helperImage ${img.name}` }
+          id        = { img.name }
+          className = { `helperImage` }
           src       = { img.img }
           key       = { `img${index}` }
         />

@@ -240,8 +240,6 @@ function App() {
   }
 
   function animationManager(direction, previousDirection) {
-    // The first item in each array is the ID of the image I'm manipulating
-    // The second item in each array is the class name that animates it.
     const allClasses = {
       '0To1': [
         ['renew', 'renew0To1'],
@@ -249,28 +247,12 @@ function App() {
         ['cherry', 'cherry0To1 helperImage'],
         ['cherryNoStem', 'cherryNoStem0To1 helperImage'],
         ['orangeSlice', 'orangeSlice0To1 helperImage'],
-        ['apple', 'apple0To1 helperImage'],
-        ['threeBerries', 'threeBerries0To1 helperImage'],
-        ['oneBerry', 'oneBerry0To1 helperImage'],
-        ['renewBottle', 'renewBottle0To1 label displayFlex alignFlexStart'],
-        ['reviveBottle', 'reviveBottle0To1 label displayFlex alignFlexStart']
+        ['renewBottle', 'renewBottle0To1 label displayFlex alignFlexStart']
       ],
       '0To2': [
         ['renew', 'renew0To1'],
         ['revive', 'revive0To2'],
-        ['refuel', 'refuel1To2'],
-        ['cherry', 'cherry0To1 helperImage'],
-        ['cherryNoStem', 'cherryNoStem0To1 helperImage'],
-        ['orangeSlice', 'orangeSlice0To1 helperImage'],
-        ['apple', 'apple0To1 helperImage'],
-        ['threeBerries', 'threeBerries0To1 helperImage'],
-        ['oneBerry', 'oneBerry0To1 helperImage'],
-        ['chocolate', 'chocolate1To2 helperImage'],
-        ['chocolateBit', 'chocolateBit1To2 helperImage'],
-        ['chocolateScrap', 'chocolateScrap1To2 helperImage'],
-        ['renewBottle', 'renewBottle0To1 label displayFlex alignFlexStart'],
-        ['reviveBottle', 'reviveBottle0To2 label displayFlex alignFlexStart'],
-        ['refuelBottle', 'refuelBottle1To2 label displayFlex alignFlexStart']
+        ['refuel', 'refuel1To2']
       ],
       '1To0': [
         ['renew', 'renew1To0'],
@@ -278,52 +260,20 @@ function App() {
         ['cherry', 'cherry1To0 helperImage'],
         ['cherryNoStem', 'cherryNoStem1To0 helperImage'],
         ['orangeSlice', 'orangeSlice1To0 helperImage'],
-        ['apple', 'apple1To0 helperImage'],
-        ['threeBerries', 'threeBerries1To0 helperImage'],
-        ['oneBerry', 'oneBerry1To0 helperImage'],
-        ['renewBottle', 'renewBottle1To0 label displayFlex alignFlexStart'],
-        ['reviveBottle', 'reviveBottle1To0 label displayFlex alignFlexStart']
+        ['renewBottle', 'renewBottle1To0 label displayFlex alignFlexStart']
       ],
       '1To2': [
         ['revive', 'revive1To2'],
-        ['refuel', 'refuel1To2'],
-        ['apple', 'apple1To0 helperImage'],
-        ['threeBerries', 'threeBerries1To0 helperImage'],
-        ['oneBerry', 'oneBerry1To0 helperImage'],
-        ['chocolate', 'chocolate1To2 helperImage'],
-        ['chocolateBit', 'chocolateBit1To2 helperImage'],
-        ['chocolateScrap', 'chocolateScrap1To2 helperImage'],
-        ['reviveBottle', 'reviveBottle1To2 label displayFlex alignFlexStart'],
-        ['refuelBottle', 'refuelBottle1To2 label displayFlex alignFlexStart']
+        ['refuel', 'refuel1To2']
       ],
       '2To1': [
         ['revive', 'revive2To1'],
-        ['refuel', 'refuel2To1'],
-        ['apple', 'apple0To1 helperImage'],
-        ['threeBerries', 'threeBerries0To1 helperImage'],
-        ['oneBerry', 'oneBerry0To1 helperImage'],
-        ['chocolate', 'chocolate2To1 helperImage'],
-        ['chocolateBit', 'chocolateBit2To1 helperImage'],
-        ['chocolateScrap', 'chocolateScrap2To1 helperImage'],
-        ['reviveBottle', 'reviveBottle2To1 label displayFlex alignFlexStart'],
-        ['refuelBottle', 'refuelBottle2To1 label displayFlex alignFlexStart']
+        ['refuel', 'refuel2To1']
       ],
       '2To0': [
         ['renew', 'renew1To0'],
         ['revive', 'revive2To0'],
-        ['refuel', 'refuel2To1'],
-        ['cherry', 'cherry1To0 helperImage'],
-        ['cherryNoStem', 'cherryNoStem1To0 helperImage'],
-        ['orangeSlice', 'orangeSlice1To0 helperImage'],
-        ['apple', 'apple1To0 helperImage'],
-        ['threeBerries', 'threeBerries1To0 helperImage'],
-        ['oneBerry', 'oneBerry1To0 helperImage'],
-        ['chocolate', 'chocolate2To1 helperImage'],
-        ['chocolateBit', 'chocolateBit2To1 helperImage'],
-        ['chocolateScrap', 'chocolateScrap2To1 helperImage'],
-        ['renewBottle', 'renewBottle1To0 label displayFlex alignFlexStart'],
-        ['reviveBottle', 'reviveBottle2To0 label displayFlex alignFlexStart'],
-        ['refuelBottle', 'refuelBottle2To1 label displayFlex alignFlexStart']
+        ['refuel', 'refuel2To1']
       ]
     }
 

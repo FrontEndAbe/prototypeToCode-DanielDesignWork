@@ -21,6 +21,7 @@ html {
   width      : 100%;
   height     : 100%;
   margin     : 0;
+  background : var(--mainBlue); /* Mainly here to see how it will look */
 }
 
 p, a, h1 {
@@ -81,6 +82,7 @@ p, a, h1 {
   height          : 100%;
   display         : flex;
   overflow-x      : scroll;
+  /* scroll-behavior : smooth; */
 }
 
 .nav {
@@ -145,6 +147,8 @@ p, a, h1 {
   margin-right : calc(100% * 0.04);
 }
 
+/* ---------------------------------------------------------- */
+
 .contentSection {
   min-width       : 100%;
   height          : 100%;
@@ -160,7 +164,7 @@ p, a, h1 {
 
 .contentSection #renew,
 .contentSection #revive,
-.contentSection #refuel {
+.contentSection #refuel { /* Changed */
   margin      : 12% auto 0;
   left        : 0;
   right       : 0;
@@ -236,6 +240,8 @@ p, a, h1 {
   color                   : var(--mainBlue);
 }
 
+/* ------------------------------------------- */
+
 /* Container for all images */
 .imagesHolder {
   position : relative;
@@ -274,6 +280,8 @@ p, a, h1 {
   margin-left : 10%;
 }
 
+/* ----------------------------------------------- */
+
 .contentSection .bottomPortion {
   width       : 100%;
   font-size   : 3vw;
@@ -299,112 +307,98 @@ p, a, h1 {
   margin : 5% 5% 0 0;
 }
 
+
+/* ------------------------------------------------------------ */
+
 .renew          { background-color: var(--mainBlue); }
 .revive         { background-color: var(--mainBrown); }
 .refuel         { background-color: var(--mainGreen); }
-.renew #renew   { color: var(--helperBlue); }
-.revive #revive { color: var(--helperBrown); }
-.refuel #refuel { color: var(--helperPurple); }
+.renew #renew   { color: var(--helperBlue); }   /* Changed */
+.revive #revive { color: var(--helperBrown); }  /* Changed */
+.refuel #refuel { color: var(--helperPurple); } /* Changed */
 
 /* These are the extra images */
 .imagesHolder .helperImage {
   position : absolute;
 }
 
-.imagesHolder .helperImage#cherry {
+.imagesHolder .helperImage#cherry { /* Changed */
   top     : 0;
   left    : 165%;
   z-index : 3;
 }
 
-.imagesHolder .helperImage#cherryNoStem {
+.imagesHolder .helperImage#cherryNoStem { /* Changed */
   top       : 25%;
   left      : -70%;
   transform : rotate(237deg);
 }
 
-.imagesHolder .helperImage#orangeSlice {
+.imagesHolder .helperImage#orangeSlice { /* Changed */
   width   : 90%;
   z-index : 3;
   bottom  : -5%;
   right   : -40%;
 }
 
-.imagesHolder .helperImage#apple {
+.imagesHolder .helperImage#apple { /* Changed */
   width   : 85%;
   top     : 40%;
   left    : -55%;
   z-index : 2;
 }
 
-.imagesHolder .helperImage#oneBerry {
+.imagesHolder .helperImage#oneBerry { /* Changed */
   top   : 20%;
   right : -30%;
 }
 
-.imagesHolder .helperImage#threeBerries {
+.imagesHolder .helperImage#threeBerries { /* Changed */
   bottom  : 0;
   right   : -30%;
   z-index : 2;
 }
 
-.imagesHolder .helperImage#chocolate {
+.imagesHolder .helperImage#chocolate { /* Changed */
   width : 35vw;
-  left: -47%;
-  top: -11%;
+  left  : -28%;
+  top   : -20%;
 }
 
-.imagesHolder .helperImage#chocolateBit {
+.imagesHolder .helperImage#chocolateBit { /* Changed */
   width   : 37%;
-  bottom: 9%;
-  left: 70%;
+  bottom  : 0;
+  left    : 9%;
   z-index : 2;
 }
 
-.imagesHolder .helperImage#chocolateScrap {
-  bottom: 25%;
-  left: -25%;
+.imagesHolder .helperImage#chocolateScrap { /* Changed */
+  bottom  : 14%;
+  left    : -45%;
   z-index : 2;
 }
 
-.renew0To1          { animation: renew0To1Animation 2.5s forwards; }
-.renew1To0          { animation: renew1To0Animation 2.5s forwards; }
-.revive0To1         { animation: revive0To1Animation 2.5s forwards; }
-.revive0To2         { animation: revive0To2Animation 2.5s forwards; }
-.revive1To2         { animation: revive1To2Animation 2.5s forwards; }
-.revive1To0         { animation: revive1To0Animation 2.5s forwards; }
-.revive2To0         { animation: revive2To0Animation 2.5s forwards; }
-.revive2To1         { animation: revive2To1Animation 2.5s forwards; }
-.refuel1To2         { animation: refuel1To2Animation 2.5s forwards; }
-.refuel2To1         { animation: refuel2To1Animation 2.5s forwards; }
-.cherry0To1         { animation: cherry0To1Animation 1.5s forwards; }
-.cherry1To0         { animation: cherry1To0Animation 3s forwards; }
-.cherryNoStem0To1   { animation: cherryNoStem0To1Animation 1.5s forwards; }
-.cherryNoStem1To0   { animation: cherryNoStem1To0Animation 3s forwards; }
-.orangeSlice0To1    { animation: orangeSlice0To1Animation 1.5s forwards; }
-.orangeSlice1To0    { animation: orangeSlice1To0Animation 3s forwards; }
-.apple0To1          { animation: apple0To1Animation 3s forwards; }
-.apple1To0          { animation: apple1To0Animation 3s forwards; }
-.threeBerries0To1   { animation: threeBerries0To1Animation 3s forwards; }
-.threeBerries1To0   { animation: threeBerries1To0Animation 3s forwards; }
-.oneBerry0To1       { animation: oneBerry0To1Animation 3s forwards; }
-.oneBerry1To0       { animation: oneBerry1To0Animation 3s forwards; }
-.chocolate1To2      { animation: chocolate1To2Animation 3s forwards; }
-.chocolate2To1      { animation: chocolate2To1Animation 3s forwards; }
-.chocolateBit1To2   { animation: chocolateBit1To2Animation 3s forwards; }
-.chocolateBit2To1   { animation: chocolateBit2To1Animation 3s forwards; }
-.chocolateScrap1To2 { animation: chocolateScrap1To2Animation 3s forwards; }
-.chocolateScrap2To1 { animation: chocolateScrap2To1Animation 3s forwards; }
-.renewBottle0To1    { animation: renewBottle0To1Animation 3s forwards; }
-.renewBottle1To0    { animation: renewBottle1To0Animation 3s forwards; }
-.reviveBottle0To1   { animation: reviveBottle0To1Animation 3s forwards; }
-.reviveBottle1To0   { animation: reviveBottle1To0Animation 3s forwards; }
-.reviveBottle1To2   { animation: reviveBottle1To2Animation 3s forwards; }
-.reviveBottle2To1   { animation: reviveBottle2To1Animation 3s forwards; }
-.reviveBottle0To2   { animation: reviveBottle0To2Animation 3s forwards; }
-.reviveBottle2To0   { animation: reviveBottle2To0Animation 3s forwards; }
-.refuelBottle1To2   { animation: refuelBottle1To2Animation 3s forwards; }
-.refuelBottle2To1   { animation: refuelBottle2To1Animation 3s forwards; }
+
+/* -------------------------------------- */
+
+.renew0To1 { animation: renew0To1Animation 2.5s forwards; }
+.renew1To0 { animation: renew1To0Animation 2.5s forwards; }
+.revive0To1 { animation: revive0To1Animation 2.5s forwards; }
+.revive0To2 { animation: revive0To2Animation 2.5s forwards; }
+.revive1To2 { animation: revive1To2Animation 2.5s forwards; }
+.revive1To0 { animation: revive1To0Animation 2.5s forwards; }
+.revive2To0 { animation: revive2To0Animation 2.5s forwards; }
+.revive2To1 { animation: revive2To1Animation 2.5s forwards; }
+.refuel1To2 { animation: refuel1To2Animation 2.5s forwards; }
+.refuel2To1 { animation: refuel2To1Animation 2.5s forwards; }
+.cherry0To1 { animation: cherry0To1Animation 1.5s forwards; }
+.cherry1To0 { animation: cherry1To0Animation 3s forwards; }
+.cherryNoStem0To1 { animation: cherryNoStem0To1Animation 1.5s forwards; }
+.cherryNoStem1To0 { animation: cherryNoStem1To0Animation 3s forwards; }
+.orangeSlice0To1 { animation: orangeSlice0To1Animation 1.5s forwards; }
+.orangeSlice1To0 { animation: orangeSlice1To0Animation 3s forwards; }
+.renewBottle0To1 { animation: renewBottle0To1Animation 1.5s forwards; }
+.renewBottle1To0 { animation: renewBottle1To0Animation 3s forwards; }
 
 @keyframes renew0To1Animation {
   from { left: 0; }
@@ -460,7 +454,8 @@ p, a, h1 {
   from {
     left: 165%;
     transform: rotate(0deg);
-  } to {
+  }
+  to {
     left: 57%;
     transform: rotate(-150deg);
   }
@@ -470,7 +465,8 @@ p, a, h1 {
   from {
     left: 57%;
     transform: rotate(-150deg);
-  } to {
+  }
+  to {
     left: 165%;
     transform: rotate(0deg);
   }
@@ -481,7 +477,8 @@ p, a, h1 {
     top: 25%;
     left: -70%;
     transform: rotate(237deg);
-  } to {
+  }
+  to {
     top: 42%;
     left: 0%;
     transform: rotate(150deg);
@@ -493,7 +490,8 @@ p, a, h1 {
     top: 42%;
     left: 0%;
     transform: rotate(150deg);
-  } to {
+  }
+  to {
     top: 25%;
     left: -70%;
     transform: rotate(237deg);
@@ -504,7 +502,8 @@ p, a, h1 {
   from {
     right: -40%;
     transform: rotate(0deg);
-  } to {
+  }
+  to {
     right: 25%;
     transform: rotate(-80deg);
   }
@@ -514,140 +513,9 @@ p, a, h1 {
   from {
     right: 25%;
     transform: rotate(-80deg);
-  } to {
+  }
+  to {
     right: -40%;
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes apple0To1Animation {
-  from {
-    top: 40%;
-    left: -55%;
-    transform: rotate(0deg);
-  } to {
-    top: 34%;
-    left: -113%;
-    transform: rotate(-154deg);
-  }
-}
-
-@keyframes apple1To0Animation {
-  from {
-    top: 34%;
-    left: -113%;
-    transform: rotate(-154deg);
-  } to {
-    top: 40%;
-    left: -55%;
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes threeBerries0To1Animation {
-  from {
-    right: -30%;
-    transform: rotate(0deg);
-  } to {
-    right: -76%;
-    transform: rotate(52deg);
-  }
-}
-
-@keyframes threeBerries1To0Animation {
-  from {
-    right: -76%;
-    transform: rotate(52deg);
-  } to {
-    right: -30%;
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes oneBerry0To1Animation {
-  from {
-    top: 20%;
-    right: -30%;
-    transform: rotate(0deg);
-  } to {
-    top: 14%;
-    right: -137%;
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes oneBerry1To0Animation {
-  from {
-    top: 14%;
-    right: -137%;
-    transform: rotate(45deg);
-  } to {
-    top: 20%;
-    right: -30%;
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes chocolate1To2Animation {
-  from {
-    left: -47%;
-    top: -11%;
-  } to {
-    left: -22%;
-    top: -19%;
-  }
-}
-
-@keyframes chocolate2To1Animation {
-  from {
-    left: -22%;
-    top: -19%;
-  } to {
-    left: -47%;
-    top: -11%;
-  }
-}
-
-@keyframes chocolateBit1To2Animation {
-  from {
-    bottom: 9%;
-    left: 70%;
-  } to {
-    bottom: 0;
-    left: 4%;
-  }
-}
-
-@keyframes chocolateBit2To1Animation {
-  from {
-    bottom: 0;
-    left: 4%;
-  } to {
-    bottom: 9%;
-    left: 70%;
-  }
-}
-
-@keyframes chocolateScrap1To2Animation {
-  from {
-    bottom: 25%;
-    left: -25%;
-    transform: rotate(0deg);
-  } to {
-    bottom: 28%;
-    left: -58%;
-    transform: rotate(-107deg);
-  }
-}
-
-@keyframes chocolateScrap2To1Animation {
-  from {
-    bottom: 28%;
-    left: -58%;
-    transform: rotate(-107deg);
-  } to {
-    bottom: 25%;
-    left: -25%;
     transform: rotate(0deg);
   }
 }
@@ -656,7 +524,8 @@ p, a, h1 {
   from {
     left: -14%;
     right: -14%;
-  } to {
+  }
+  to {
     left: -68%;
     right: 40%;
   }
@@ -666,88 +535,9 @@ p, a, h1 {
   from {
     left: -68%;
     right: 40%;
-  } to {
+  }
+  to {
     left: -14%;
     right: -14%;
-  }
-}
-
-@keyframes reviveBottle0To1Animation {
-  from {
-    left: 40%;
-    right: -68%;
-  } to {
-    left: -14%;
-    right: -14%;
-  }
-}
-
-@keyframes reviveBottle1To0Animation {
-  from {
-    left: -14%;
-    right: -14%;
-  } to {
-    left: 40%;
-    right: -68%;
-  }
-}
-
-@keyframes reviveBottle1To2Animation {
-  from {
-    left: -14%;
-    right: -14%;
-  } to {
-    left: -68%;
-    right: 40%;
-  }
-}
-
-@keyframes reviveBottle2To1Animation {
-  from {
-    left: -68%;
-    right: 40%;
-  } to {
-    left: -14%;
-    right: -14%;
-  }
-}
-
-@keyframes reviveBottle0To2Animation {
-  from {
-    left: 40%;
-    right: -68%;
-  } to {
-    left: -68%;
-    right: 40%;
-  }
-}
-
-@keyframes reviveBottle2To0Animation {
-  from {
-    left: -68%;
-    right: 40%;
-  } to {
-    left: 40%;
-    right: -68%;
-  }
-}
-
-@keyframes refuelBottle1To2Animation {
-  from {
-    left: 40%;
-    right: -68%;
-  } to {
-    left: -14%;
-    right: -14%;
-  }
-}
-
-@keyframes refuelBottle2To1Animation {
-  from {
-    left: -14%;
-    right: -14%;
-  } to {
-    left: 40%;
-    right: -68%;
   }
 }
